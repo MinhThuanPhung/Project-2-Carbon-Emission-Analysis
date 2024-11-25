@@ -202,3 +202,46 @@ Result
 
 #### Industry groups has demonstrated the most notable decrease in carbon footprints (PCFs) over time?
 ```SQL
+select Year, industry_group, round(avg(carbon_footprint_pcf),2) as Avg_CFP
+from product_emissions a
+join industry_groups b
+on a.industry_group_id = b.id
+group by year, industry_group
+Order by industry_group, year , avg(carbon_footprint_pcf)
+limit 15
+```
+
+``SQL
+select  industry_group as 'Industry_group', 
+round(avg(case when year= 2013 then carbon_footprint_pcf else 0 end) ,2) as  '2013 Emission', 
+round(avg(case when year= 2014 then carbon_footprint_pcf else 0 end) ,2) as  '2014 Emission',  
+round(avg(case when year= 2015 then carbon_footprint_pcf else 0 end) ,2) as '2015 Emission',
+round(avg(case when year= 2016 then carbon_footprint_pcf else 0 end) ,2) as  '2016 Emission',
+round(avg(case when year= 2017 then carbon_footprint_pcf else 0 end) ,2) as '2017 Emission'
+from product_emissions a
+join industry_groups b
+on a.industry_group_id = b.id
+group by industry_group
+Order by industry_group
+limit 15
+
+```
+
+| Industry_group                                                         | 2013 Emission | 2014 Emission | 2015 Emission | 2016 Emission | 2017 Emission | 
+| ---------------------------------------------------------------------: | ------------: | ------------: | ------------: | ------------: | ------------: | 
+| "Consumer Durables, Household and Personal Products"                   | 0.00          | 0.00          | 116.38        | 0.00          | 0.00          | 
+| "Food, Beverage & Tobacco"                                             | 39.02         | 20.98         | 0.00          | 783.51        | 24.70         | 
+| "Forest and Paper Products - Forestry, Timber, Pulp and Paper, Rubber" | 0.00          | 0.00          | 685.31        | 0.00          | 0.00          | 
+| "Mining - Iron, Aluminum, Other Metals"                                | 0.00          | 0.00          | 2727.00       | 0.00          | 0.00          | 
+| "Pharmaceuticals, Biotechnology & Life Sciences"                       | 10757.00      | 13405.00      | 0.00          | 0.00          | 0.00          | 
+| "Textiles, Apparel, Footwear and Luxury Goods"                         | 0.00          | 0.00          | 14.33         | 0.00          | 0.00          | 
+| Automobiles & Components                                               | 1783.41       | 3150.89       | 11194.89      | 19244.29      | 0.00          | 
+| Capital Goods                                                          | 1719.71       | 2677.11       | 100.14        | 181.97        | 2712.83       | 
+| Chemicals                                                              | 0.00          | 0.00          | 1949.03       | 0.00          | 0.00          | 
+| Commercial & Professional Services                                     | 26.30         | 10.84         | 0.00          | 65.68         | 16.84         | 
+| Consumer Durables & Apparel                                            | 42.16         | 48.24         | 0.00          | 17.09         | 0.00          | 
+| Containers & Packaging                                                 | 0.00          | 0.00          | 373.50        | 0.00          | 0.00          | 
+| Electrical Equipment and Machinery                                     | 0.00          | 0.00          | 891050.73     | 0.00          | 0.00          | 
+| Energy                                                                 | 150.00        | 0.00          | 0.00          | 2004.80       | 0.00          | 
+| Food & Beverage Processing                                             | 0.00          | 0.00          | 7.05          | 0.00          | 0.00          | 
+
