@@ -101,3 +101,58 @@ Result
 | TCDE                                                                                                                               | Materials                          | 
 | TCDE                                                                                                                               | Materials                          | 
 | Retaining wall structure with a main wall (sheet pile): 136 tonnes of steel sheet piles and 4 tonnes of tierods per 100 meter wall | Materials                          | 
+
+
+#### The industries with the highest contribution to carbon emissions
+
+```sql
+select  b.industry_group, avg(carbon_footprint_pcf) as avg_CFP
+from product_emissions a
+Join industry_groups b
+on a.industry_group_id = b.ID
+Group by b.industry_group
+Order by avg(carbon_footprint_pcf) DESC
+Limit 10
+```
+Result 
+
+| industry_group                                   | avg_CFP     | 
+| -----------------------------------------------: | ----------: | 
+| Electrical Equipment and Machinery               | 891050.7273 | 
+| Automobiles & Components                         | 35373.4795  | 
+| "Pharmaceuticals, Biotechnology & Life Sciences" | 24162.0000  | 
+| Capital Goods                                    | 7391.7714   | 
+| Materials                                        | 3208.8611   | 
+| "Mining - Iron, Aluminum, Other Metals"          | 2727.0000   | 
+| Energy                                           | 2154.8000   | 
+| Chemicals                                        | 1949.0313   | 
+| Media                                            | 1534.4667   | 
+| Software & Services                              | 1368.9412   | 
+
+
+#### The companies with the highest contribution to carbon emissions
+
+```sql
+select  c.company_name, avg(carbon_footprint_pcf) as avg_CFP
+from product_emissions a
+Join companies c
+on a.company_id = c.ID
+Group by c.company_name
+Order by avg(carbon_footprint_pcf) DESC
+Limit 10
+```
+
+Result
+
+| company_name                           | avg_CFP      | 
+| -------------------------------------: | -----------: | 
+| "Gamesa Corporación Tecnológica, S.A." | 2444616.0000 | 
+| "Hino Motors, Ltd."                    | 191687.0000  | 
+| Arcelor Mittal                         | 83503.5000   | 
+| Weg S/A                                | 53551.6667   | 
+| Daimler AG                             | 43089.1892   | 
+| General Motors Company                 | 34251.7500   | 
+| Volkswagen AG                          | 26238.4000   | 
+| Waters Corporation                     | 24162.0000   | 
+| "Daikin Industries, Ltd."              | 17600.0000   | 
+| CJ Cheiljedang                         | 15802.8333   | 
