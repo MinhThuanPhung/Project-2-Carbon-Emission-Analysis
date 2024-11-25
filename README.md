@@ -52,13 +52,16 @@ Result
 
 #### Products contribute the most to carbon emissions
 ```sql
-select product_name, sum(carbon_footprint_pcf) as total_carbon_footprint
+select product_name, round(avg(carbon_footprint_pcf), 2) as total_carbon_footprint
 from product_emissions
 Group by product_name
-order by sum(carbon_footprint_pcf) DESC
+order by avg(carbon_footprint_pcf) DESC
 Limit 1
 ```
 Result 
 | product_name                 | total_carbon_footprint | 
 | ---------------------------: | ---------------------: | 
-| Wind Turbine G128 5 Megawats | 3718044                | 
+| Wind Turbine G128 5 Megawats | 3718044.00             | 
+
+
+#### Industry groups of these products
