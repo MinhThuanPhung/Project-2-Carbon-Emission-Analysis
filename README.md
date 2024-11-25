@@ -211,7 +211,7 @@ Order by industry_group, year , avg(carbon_footprint_pcf)
 limit 15
 ```
 
-``SQL
+```SQL
 select  industry_group as 'Industry_group', 
 round(avg(case when year= 2013 then carbon_footprint_pcf else 0 end) ,2) as  '2013 Emission', 
 round(avg(case when year= 2014 then carbon_footprint_pcf else 0 end) ,2) as  '2014 Emission',  
