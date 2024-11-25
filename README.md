@@ -74,3 +74,30 @@ Result
 
 
 #### Industry groups of these products
+```SQL
+select  a.product_name, b.industry_group
+from product_emissions a
+Join industry_groups b
+on a.industry_group_id = b.ID
+where product_name in ('Wind Turbine G128 5 Megawats', 'Wind Turbine G132 5 Megawats', 
+					   'Wind Turbine G114 2 Megawats', 'Wind Turbine G90 2 Megawats'
+					   'Land Cruiser Prado. FJ Cruiser. Dyna trucks. Toyoace.IMV def unit.',
+					   'Retaining wall structure with a main wall (sheet pile): 136 tonnes of steel sheet piles and 4 tonnes of tierods per 100 meter wall',
+					   'TCDE',
+					   'Mercedes-Benz GLE (GLE 500 4MATIC)',
+					   'Mercedes-Benz S-Class (S 500)',
+					  ' Mercedes-Benz SL (SL 350)' )
+
+```
+Result
+
+| product_name                                                                                                                       | industry_group                     | 
+| ---------------------------------------------------------------------------------------------------------------------------------: | ---------------------------------: | 
+| Mercedes-Benz GLE (GLE 500 4MATIC)                                                                                                 | Automobiles & Components           | 
+| Mercedes-Benz S-Class (S 500)                                                                                                      | Automobiles & Components           | 
+| Wind Turbine G114 2 Megawats                                                                                                       | Electrical Equipment and Machinery | 
+| Wind Turbine G128 5 Megawats                                                                                                       | Electrical Equipment and Machinery | 
+| Wind Turbine G132 5 Megawats                                                                                                       | Electrical Equipment and Machinery | 
+| TCDE                                                                                                                               | Materials                          | 
+| TCDE                                                                                                                               | Materials                          | 
+| Retaining wall structure with a main wall (sheet pile): 136 tonnes of steel sheet piles and 4 tonnes of tierods per 100 meter wall | Materials                          | 
