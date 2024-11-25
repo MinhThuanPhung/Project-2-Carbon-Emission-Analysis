@@ -72,6 +72,8 @@ Result
 | Mercedes-Benz S-Class (S 500)                                                                                                      | 85000.00             | 
 | Mercedes-Benz SL (SL 350)                                                                                                          | 72000.00             | 
 
+##### Wind Turbine
+
 
 #### Industry groups of these products
 ```SQL
