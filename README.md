@@ -106,7 +106,7 @@ Result
 #### The industries with the highest contribution to carbon emissions
 
 ```sql
-select  b.industry_group, avg(carbon_footprint_pcf) as avg_CFP
+select  b.industry_group, round(avg(carbon_footprint_pcf), 2) as avg_CFP
 from product_emissions a
 Join industry_groups b
 on a.industry_group_id = b.ID
@@ -116,43 +116,89 @@ Limit 10
 ```
 Result 
 
-| industry_group                                   | avg_CFP     | 
-| -----------------------------------------------: | ----------: | 
-| Electrical Equipment and Machinery               | 891050.7273 | 
-| Automobiles & Components                         | 35373.4795  | 
-| "Pharmaceuticals, Biotechnology & Life Sciences" | 24162.0000  | 
-| Capital Goods                                    | 7391.7714   | 
-| Materials                                        | 3208.8611   | 
-| "Mining - Iron, Aluminum, Other Metals"          | 2727.0000   | 
-| Energy                                           | 2154.8000   | 
-| Chemicals                                        | 1949.0313   | 
-| Media                                            | 1534.4667   | 
-| Software & Services                              | 1368.9412   | 
+| industry_group                                   | avg_CFP   | 
+| -----------------------------------------------: | --------: | 
+| Electrical Equipment and Machinery               | 891050.73 | 
+| Automobiles & Components                         | 35373.48  | 
+| "Pharmaceuticals, Biotechnology & Life Sciences" | 24162.00  | 
+| Capital Goods                                    | 7391.77   | 
+| Materials                                        | 3208.86   | 
+| "Mining - Iron, Aluminum, Other Metals"          | 2727.00   | 
+| Energy                                           | 2154.80   | 
+| Chemicals                                        | 1949.03   | 
+| Media                                            | 1534.47   | 
+| Software & Services                              | 1368.94   | 
 
 
 #### The companies with the highest contribution to carbon emissions
 
 ```sql
-select  c.company_name, avg(carbon_footprint_pcf) as avg_CFP
+select  c.company_name, round(avg(carbon_footprint_pcf),2) as avg_CFP
 from product_emissions a
 Join companies c
 on a.company_id = c.ID
 Group by c.company_name
 Order by avg(carbon_footprint_pcf) DESC
-Limit 10
+Limit 10 
 ```
 
 Result
 
-| company_name                           | avg_CFP      | 
-| -------------------------------------: | -----------: | 
-| "Gamesa Corporación Tecnológica, S.A." | 2444616.0000 | 
-| "Hino Motors, Ltd."                    | 191687.0000  | 
-| Arcelor Mittal                         | 83503.5000   | 
-| Weg S/A                                | 53551.6667   | 
-| Daimler AG                             | 43089.1892   | 
-| General Motors Company                 | 34251.7500   | 
-| Volkswagen AG                          | 26238.4000   | 
-| Waters Corporation                     | 24162.0000   | 
-| "Daikin Industries, Ltd."              | 17600.0000   | 
-| CJ Cheiljedang                         | 15802.8333   | 
+| company_name                           | avg_CFP    | 
+| -------------------------------------: | ---------: | 
+| "Gamesa Corporación Tecnológica, S.A." | 2444616.00 | 
+| "Hino Motors, Ltd."                    | 191687.00  | 
+| Arcelor Mittal                         | 83503.50   | 
+| Weg S/A                                | 53551.67   | 
+| Daimler AG                             | 43089.19   | 
+| General Motors Company                 | 34251.75   | 
+| Volkswagen AG                          | 26238.40   | 
+| Waters Corporation                     | 24162.00   | 
+| "Daikin Industries, Ltd."              | 17600.00   | 
+| CJ Cheiljedang                         | 15802.83   | 
+
+#### The countries with the highest contribution to carbon emissions
+
+```sql
+select  d.country_name, round(avg(carbon_footprint_pcf), 2) as avg_CFP 
+from product_emissions a
+Join countries d
+on a.country_id = d.ID
+Group by d.country_name
+Order by avg(carbon_footprint_pcf) DESC
+Limit 10
+```
+Result
+
+| country_name | avg_CFP   | 
+| -----------: | --------: | 
+| Spain        | 699009.29 | 
+| Luxembourg   | 83503.50  | 
+| Germany      | 33600.37  | 
+| Brazil       | 9407.61   | 
+| South Korea  | 5665.61   | 
+| Japan        | 4600.26   | 
+| Netherlands  | 2011.91   | 
+| India        | 1535.88   | 
+| USA          | 1332.60   | 
+| South Africa | 1119.27   | 
+
+#### The trend of carbon footprints (PCFs) over the years
+
+```sql
+select Year, round(avg(carbon_footprint_pcf),2) as Avg_CFP
+from product_emissions
+group by year
+```
+Result
+
+| Year | Avg_CFP  | 
+| ---: | -------: | 
+| 2013 | 2399.32  | 
+| 2014 | 2457.58  | 
+| 2015 | 43188.90 | 
+| 2016 | 6891.52  | 
+| 2017 | 4050.85  |  
+
+#### Industry groups has demonstrated the most notable decrease in carbon footprints (PCFs) over time?
+```SQL
