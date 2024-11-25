@@ -49,3 +49,16 @@ Result
 | 4  | "CNX Coal Resources, LP"      | 
 | 5  | "Coca-Cola Enterprises, Inc." | 
 
+
+#### Products contribute the most to carbon emissions
+```sql
+select product_name, sum(carbon_footprint_pcf) as total_carbon_footprint
+from product_emissions
+Group by product_name
+order by sum(carbon_footprint_pcf) DESC
+Limit 1
+```
+Result 
+| product_name                 | total_carbon_footprint | 
+| ---------------------------: | ---------------------: | 
+| Wind Turbine G128 5 Megawats | 3718044                | 
