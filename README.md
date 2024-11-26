@@ -151,7 +151,7 @@ Result
 | Media                                            | 1534.47   | 
 | Software & Services                              | 1368.94   | 
 
-Top 3 industries with the highest contribution to carbon emissions are  Electrical Equipment and Machinery, Automobiles & Components  and "Pharmaceuticals, Biotechnology & Life Sciences. Only Electrical Equipment and Machinery contributes 891050.73 Cacbon emission
+Top 3 industries with the highest contribution to carbon emissions are  Electrical Equipment and Machinery, Automobiles & Components  and "Pharmaceuticals, Biotechnology & Life Sciences. Only Electrical Equipment and Machinery contributes 891050.73 Cacbon emission which are more than 90% in total carbon emssion contributed by Top 10 Indutries
 
 #### The companies with the highest contribution to carbon emissions
 
@@ -180,6 +180,9 @@ Result
 | "Daikin Industries, Ltd."              | 17600.00   | 
 | CJ Cheiljedang                         | 15802.83   | 
 
+Top 10 companies with the highest contribution to carbon emissions include Gamesa Corporación Tecnológica S.A, Hino Motors Ltd, Arcelor Mittal, Arcelor Mittal,  Weg S/A, Daimler AG, General Motors Company, Volkswagen AG, Waters Corporation, Daikin Industries Ltd and CJ Cheiljedang. Gamesa Corporación Tecnológica, S.A contributes 2444616 carbon emission which is company with the highest contribution.
+
+
 #### The countries with the highest contribution to carbon emissions
 
 ```sql
@@ -205,6 +208,8 @@ Result
 | India        | 1535.88   | 
 | USA          | 1332.60   | 
 | South Africa | 1119.27   | 
+
+Spain, Luxembourg and Germany are top 3 countries  with the highest contribution to carbon emissions.
 
 #### The trend of carbon footprints (PCFs) over the years
 
