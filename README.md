@@ -254,6 +254,7 @@ group by year, industry_group
 Order by industry_group, year , avg(carbon_footprint_pcf)
 limit 15
 ```
+Or use code below 
 
 ```SQL
 select  industry_group as 'Industry_group', 
@@ -288,4 +289,11 @@ limit 15
 | Electrical Equipment and Machinery                                     | 0.00          | 0.00          | 891050.73     | 0.00          | 0.00          | 
 | Energy                                                                 | 150.00        | 0.00          | 0.00          | 2004.80       | 0.00          | 
 | Food & Beverage Processing                                             | 0.00          | 0.00          | 7.05          | 0.00          | 0.00          | 
+
+
+### Insights
+
+- The products with the highest levels of carbon emissions are typically associated with heavy industry.
+- The following car models are leading in carbon emissions during production: Land Cruiser Prado, Mercedes-Benz GLA, Mercedes-Benz S-Class, and Mercedes-Benz SL
+- One of the leading industries (7th place) is "Pharmaceuticals, Biotechnology & Life Sciences".
 
