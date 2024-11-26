@@ -52,30 +52,42 @@ Result
 
 #### Products contribute the most to carbon emissions
 ```sql
-select product_name, round(avg(carbon_footprint_pcf), 2) as avg_carbon_footprint
+select product_name, round(avg(carbon_footprint_pcf), 2) as avg_CFP
 from product_emissions
 Group by product_name
 order by avg(carbon_footprint_pcf) DESC
 Limit 10
 ```
 Result 
-| product_name                                                                                                                       | avg_carbon_footprint | 
-| ---------------------------------------------------------------------------------------------------------------------------------: | -------------------: | 
-| Wind Turbine G128 5 Megawats                                                                                                       | 3718044.00           | 
-| Wind Turbine G132 5 Megawats                                                                                                       | 3276187.00           | 
-| Wind Turbine G114 2 Megawats                                                                                                       | 1532608.00           | 
-| Wind Turbine G90 2 Megawats                                                                                                        | 1251625.00           | 
-| Land Cruiser Prado. FJ Cruiser. Dyna trucks. Toyoace.IMV def unit.                                                                 | 191687.00            | 
-| Retaining wall structure with a main wall (sheet pile): 136 tonnes of steel sheet piles and 4 tonnes of tierods per 100 meter wall | 167000.00            | 
-| TCDE                                                                                                                               | 99075.00             | 
-| Mercedes-Benz GLE (GLE 500 4MATIC)                                                                                                 | 91000.00             | 
-| Mercedes-Benz S-Class (S 500)                                                                                                      | 85000.00             | 
-| Mercedes-Benz SL (SL 350)                                                                                                          | 72000.00             | 
+| product_name                                                                                                                       | avg_CFP    | 
+| ---------------------------------------------------------------------------------------------------------------------------------: | ---------: | 
+| Wind Turbine G128 5 Megawats                                                                                                       | 3718044.00 | 
+| Wind Turbine G132 5 Megawats                                                                                                       | 3276187.00 | 
+| Wind Turbine G114 2 Megawats                                                                                                       | 1532608.00 | 
+| Wind Turbine G90 2 Megawats                                                                                                        | 1251625.00 | 
+| Land Cruiser Prado. FJ Cruiser. Dyna trucks. Toyoace.IMV def unit.                                                                 | 191687.00  | 
+| Retaining wall structure with a main wall (sheet pile): 136 tonnes of steel sheet piles and 4 tonnes of tierods per 100 meter wall | 167000.00  | 
+| TCDE                                                                                                                               | 99075.00   | 
+| Mercedes-Benz GLE (GLE 500 4MATIC)                                                                                                 | 91000.00   | 
+| Mercedes-Benz S-Class (S 500)                                                                                                      | 85000.00   | 
+| Mercedes-Benz SL (SL 350)                                                                                                          | 72000.00   | 
 
-##### Wind Turbine
+##### Wind Turbine contributes the highest carbon emissions, followed by  Land Cruiser Prado. FJ Cruiser. Dyna trucks. Toyoace then Sheet pile, TCDE and finally by 3 series of Mercedes-Benz. The highest one is Wind Turbine G128 5 Megawats which contributes carbon emissions 50 times as much as Mercedes-Benz SL (SL 350)  as the last one in Top 10 the  products contribute the most to carbon emission.
+
 
 
 #### Industry groups of these products
+
+```sql
+select product_name, b.industry_group, round(avg(carbon_footprint_pcf), 2) as avg_CFP
+from product_emissions a
+Join industry_groups b
+on a.industry_group_id = b.ID
+Group by product_name
+order by avg(carbon_footprint_pcf) DESC
+Limit 10
+```
+Or can use this code, It shows industry group and avg_pfp
 ```SQL
 select  a.product_name, b.industry_group
 from product_emissions a
@@ -91,19 +103,26 @@ where product_name in ('Wind Turbine G128 5 Megawats', 'Wind Turbine G132 5 Mega
 					  ' Mercedes-Benz SL (SL 350)' )
 
 ```
+
+
+
+
 Result
 
-| product_name                                                                                                                       | industry_group                     | 
-| ---------------------------------------------------------------------------------------------------------------------------------: | ---------------------------------: | 
-| Mercedes-Benz GLE (GLE 500 4MATIC)                                                                                                 | Automobiles & Components           | 
-| Mercedes-Benz S-Class (S 500)                                                                                                      | Automobiles & Components           | 
-| Wind Turbine G114 2 Megawats                                                                                                       | Electrical Equipment and Machinery | 
-| Wind Turbine G128 5 Megawats                                                                                                       | Electrical Equipment and Machinery | 
-| Wind Turbine G132 5 Megawats                                                                                                       | Electrical Equipment and Machinery | 
-| TCDE                                                                                                                               | Materials                          | 
-| TCDE                                                                                                                               | Materials                          | 
-| Retaining wall structure with a main wall (sheet pile): 136 tonnes of steel sheet piles and 4 tonnes of tierods per 100 meter wall | Materials                          | 
+| product_name                                                                                                                       | industry_group                     | avg_CFP    | 
+| ---------------------------------------------------------------------------------------------------------------------------------: | ---------------------------------: | ---------: | 
+| Wind Turbine G128 5 Megawats                                                                                                       | Electrical Equipment and Machinery | 3718044.00 | 
+| Wind Turbine G132 5 Megawats                                                                                                       | Electrical Equipment and Machinery | 3276187.00 | 
+| Wind Turbine G114 2 Megawats                                                                                                       | Electrical Equipment and Machinery | 1532608.00 | 
+| Wind Turbine G90 2 Megawats                                                                                                        | Electrical Equipment and Machinery | 1251625.00 | 
+| Land Cruiser Prado. FJ Cruiser. Dyna trucks. Toyoace.IMV def unit.                                                                 | Automobiles & Components           | 191687.00  | 
+| Retaining wall structure with a main wall (sheet pile): 136 tonnes of steel sheet piles and 4 tonnes of tierods per 100 meter wall | Materials                          | 167000.00  | 
+| TCDE                                                                                                                               | Materials                          | 99075.00   | 
+| Mercedes-Benz GLE (GLE 500 4MATIC)                                                                                                 | Automobiles & Components           | 91000.00   | 
+| Mercedes-Benz S-Class (S 500)                                                                                                      | Automobiles & Components           | 85000.00   | 
+| Mercedes-Benz SL (SL 350)                                                                                                          | Automobiles & Components           | 72000.00   | 
 
+####  Top 3 industries have products contribute the most carbon emission are Electrical Equipment and Machinery, Materials, Automobiles & Components. In thí top 3 induties, 80% carbon emission comes froms Electrical Equipment and Machinery. 
 
 #### The industries with the highest contribution to carbon emissions
 
@@ -131,6 +150,7 @@ Result
 | Media                                            | 1534.47   | 
 | Software & Services                              | 1368.94   | 
 
+#### Top 3 industries with the highest contribution to carbon emissions are  Electrical Equipment and Machinery, Automobiles & Components  and "Pharmaceuticals, Biotechnology & Life Sciences. Only Electrical Equipment and Machinery contributes 891050.73 Cacbon emission
 
 #### The companies with the highest contribution to carbon emissions
 
