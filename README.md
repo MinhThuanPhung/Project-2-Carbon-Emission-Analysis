@@ -209,7 +209,7 @@ Result
 | USA          | 1332.60   | 
 | South Africa | 1119.27   | 
 
-Spain, Luxembourg and Germany are top 3 countries  with the highest contribution to carbon emissions.
+Spain, Luxembourg and Germany are top 3 countries  with the highest contribution to carbon emissions. Spain contributed 699009.29 which is more than 80% compared with total contribution carbon emission of top 10 countries.
 
 #### The trend of carbon footprints (PCFs) over the years
 
@@ -227,6 +227,8 @@ Result
 | 2015 | 43188.90 | 
 | 2016 | 6891.52  | 
 | 2017 | 4050.85  |  
+
+Carbon emission increased over the year from 2013 to 2017. It was dramatically  in 2015 which 18 times as much as carbon emission in 2013 then reduced sinificantly in 2016 then reduced gradually in 2017 at 4050. 
 
 #### Industry groups has demonstrated the most notable decrease in carbon footprints (PCFs) over time?
 ```SQL
