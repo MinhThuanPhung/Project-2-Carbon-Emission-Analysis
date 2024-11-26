@@ -49,6 +49,7 @@ Result
 | 4  | "CNX Coal Resources, LP"      | 
 | 5  | "Coca-Cola Enterprises, Inc." | 
 
+### Analysis
 
 #### Products contribute the most to carbon emissions
 ```sql
@@ -72,6 +73,8 @@ Result
 | Mercedes-Benz S-Class (S 500)                                                                                                      | 85000.00   | 
 | Mercedes-Benz SL (SL 350)                                                                                                          | 72000.00   | 
 
+
+From table above we see. 
 
 Wind Turbine contributes the highest carbon emissions, followed by  Land Cruiser Prado. FJ Cruiser. Dyna trucks. Toyoace then Sheet pile, TCDE and finally by 3 series of Mercedes-Benz. The highest one is Wind Turbine G128 5 Megawats which contributes carbon emissions 50 times as much as Mercedes-Benz SL (SL 350)  as the last one in Top 10 the  products contribute the most to carbon emission.
 
@@ -123,6 +126,8 @@ Result
 | Mercedes-Benz S-Class (S 500)                                                                                                      | Automobiles & Components           | 85000.00   | 
 | Mercedes-Benz SL (SL 350)                                                                                                          | Automobiles & Components           | 72000.00   | 
 
+From table above we see. 
+
 Top 3 industries have products contribute the most carbon emission are Electrical Equipment and Machinery, Materials, Automobiles & Components. In thí top 3 induties, 80% carbon emission comes froms Electrical Equipment and Machinery. 
 
 #### The industries with the highest contribution to carbon emissions
@@ -150,6 +155,8 @@ Result
 | Chemicals                                        | 1949.03   | 
 | Media                                            | 1534.47   | 
 | Software & Services                              | 1368.94   | 
+
+From table above we see. 
 
 Top 3 industries with the highest contribution to carbon emissions are  Electrical Equipment and Machinery, Automobiles & Components  and "Pharmaceuticals, Biotechnology & Life Sciences. Only Electrical Equipment and Machinery contributes 891050.73 Cacbon emission which are more than 90% in total carbon emssion contributed by Top 10 Indutries
 
@@ -180,6 +187,9 @@ Result
 | "Daikin Industries, Ltd."              | 17600.00   | 
 | CJ Cheiljedang                         | 15802.83   | 
 
+
+From table above we see. 
+
 Top 10 companies with the highest contribution to carbon emissions include Gamesa Corporación Tecnológica S.A, Hino Motors Ltd, Arcelor Mittal, Arcelor Mittal,  Weg S/A, Daimler AG, General Motors Company, Volkswagen AG, Waters Corporation, Daikin Industries Ltd and CJ Cheiljedang. Gamesa Corporación Tecnológica, S.A contributes 2444616 carbon emission which is company with the highest contribution.
 
 
@@ -209,6 +219,8 @@ Result
 | USA          | 1332.60   | 
 | South Africa | 1119.27   | 
 
+From table above we see. 
+
 Spain, Luxembourg and Germany are top 3 countries  with the highest contribution to carbon emissions. Spain contributed 699009.29 which is more than 80% compared with total contribution carbon emission of top 10 countries.
 
 #### The trend of carbon footprints (PCFs) over the years
@@ -227,6 +239,8 @@ Result
 | 2015 | 43188.90 | 
 | 2016 | 6891.52  | 
 | 2017 | 4050.85  |  
+
+From table above we see. 
 
 Carbon emission increased over the year from 2013 to 2017. It was dramatically  in 2015 which 18 times as much as carbon emission in 2013 then reduced sinificantly in 2016 then reduced gradually in 2017 at 4050. 
 
