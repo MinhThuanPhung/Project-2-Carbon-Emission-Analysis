@@ -72,7 +72,8 @@ Result
 | Mercedes-Benz S-Class (S 500)                                                                                                      | 85000.00   | 
 | Mercedes-Benz SL (SL 350)                                                                                                          | 72000.00   | 
 
-##### Wind Turbine contributes the highest carbon emissions, followed by  Land Cruiser Prado. FJ Cruiser. Dyna trucks. Toyoace then Sheet pile, TCDE and finally by 3 series of Mercedes-Benz. The highest one is Wind Turbine G128 5 Megawats which contributes carbon emissions 50 times as much as Mercedes-Benz SL (SL 350)  as the last one in Top 10 the  products contribute the most to carbon emission.
+
+Wind Turbine contributes the highest carbon emissions, followed by  Land Cruiser Prado. FJ Cruiser. Dyna trucks. Toyoace then Sheet pile, TCDE and finally by 3 series of Mercedes-Benz. The highest one is Wind Turbine G128 5 Megawats which contributes carbon emissions 50 times as much as Mercedes-Benz SL (SL 350)  as the last one in Top 10 the  products contribute the most to carbon emission.
 
 
 
@@ -122,7 +123,7 @@ Result
 | Mercedes-Benz S-Class (S 500)                                                                                                      | Automobiles & Components           | 85000.00   | 
 | Mercedes-Benz SL (SL 350)                                                                                                          | Automobiles & Components           | 72000.00   | 
 
-####  Top 3 industries have products contribute the most carbon emission are Electrical Equipment and Machinery, Materials, Automobiles & Components. In thí top 3 induties, 80% carbon emission comes froms Electrical Equipment and Machinery. 
+Top 3 industries have products contribute the most carbon emission are Electrical Equipment and Machinery, Materials, Automobiles & Components. In thí top 3 induties, 80% carbon emission comes froms Electrical Equipment and Machinery. 
 
 #### The industries with the highest contribution to carbon emissions
 
@@ -150,7 +151,7 @@ Result
 | Media                                            | 1534.47   | 
 | Software & Services                              | 1368.94   | 
 
-#### Top 3 industries with the highest contribution to carbon emissions are  Electrical Equipment and Machinery, Automobiles & Components  and "Pharmaceuticals, Biotechnology & Life Sciences. Only Electrical Equipment and Machinery contributes 891050.73 Cacbon emission
+Top 3 industries with the highest contribution to carbon emissions are  Electrical Equipment and Machinery, Automobiles & Components  and "Pharmaceuticals, Biotechnology & Life Sciences. Only Electrical Equipment and Machinery contributes 891050.73 Cacbon emission
 
 #### The companies with the highest contribution to carbon emissions
 
