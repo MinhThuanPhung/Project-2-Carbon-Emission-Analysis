@@ -291,6 +291,10 @@ limit 15
 | Food & Beverage Processing                                             | 0.00          | 0.00          | 7.05          | 0.00          | 0.00          | 
 
 
+#### Countries contribute the most carbon emission each year
+
+
+
 ### Insights
 
 - The products with the highest levels of carbon emissions are typically associated with heavy industry.
