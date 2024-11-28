@@ -322,9 +322,49 @@ Result
 | Mercedes-Benz SL (SL 350)                                                                                                          | Automobiles & Components           | Germany      | Daimler AG                              | 72000.00   | 
 
 
+#### Contribution of each industries in Top 5 countries over the years
+
+
+```SQL
+select year, product_name, b.industry_group, country_name, round(avg(carbon_footprint_pcf), 2) as avg_CFP
+from product_emissions a
+Join industry_groups b
+on a.industry_group_id = b.ID
+Join countries d
+On a.country_id= d.id
+where country_name in ('Spain' , 'Germany', 'Brazil', 'South Korea', 'Luxembourg ')
+Group by industry_group, year
+order by country_name, industry_group
+```
+
+Result
+| year | product_name                                                                                                                | industry_group                            | country_name | avg_CFP    | 
+| ---: | --------------------------------------------------------------------------------------------------------------------------: | ----------------------------------------: | -----------: | ---------: | 
+| 2013 | Electric Motor                                                                                                              | Capital Goods                             | Brazil       | 53058.00   | 
+| 2014 | Electric Motor                                                                                                              | Capital Goods                             | Brazil       | 87589.00   | 
+| 2015 | Polyethylene                                                                                                                | Chemicals                                 | Brazil       | 3504.40    | 
+| 2015 | Electric Motor                                                                                                              | Electrical Equipment and Machinery        | Brazil       | 1959694.40 | 
+| 2013 | "Ethanol. In addition to its use as fuel (in vehicles), ethanol is an input to the food, chemical and cosmetic industries." | Energy                                    | Brazil       | 750.00     | 
+| 2013 | grinding media cast.                                                                                                        | Materials                                 | Brazil       | 19656.11   | 
+| 2014 | Polyethylene                                                                                                                | Materials                                 | Brazil       | 2560.29    | 
+| 2016 | Polyethylene                                                                                                                | Materials                                 | Brazil       | 2665.71    | 
+| 2016 | Nicotine                                                                                                                    | "Food, Beverage & Tobacco"                | Germany      | 8652.27    | 
+| 2014 | Peppermint tea infusion                                                                                                     | "Food, Beverage & Tobacco"                | Germany      | 0.00       | 
+| 2015 | Peppermint tea infusion                                                                                                     | "Food, Beverage & Tobacco"                | Germany      | 0.00       | 
+| 2013 | VW Polo V 1.6 TDI BlueMotion Technology                                                                                     | Automobiles & Components                  | Germany      | 25650.25   | 
+| 2014 | VW Polo                                                                                                                     | Automobiles & Components                  | Germany      | 27691.14   | 
+| 2015 | Volkswagen Polo                                                                                                             | Automobiles & Components                  | Germany      | 37053.67   | 
+| 2016 | Volkswagen Polo                                                                                                             | Automobiles & Components                  | Germany      | 36770.06   | 
+| 2013 | LG-E970                                                                                                                     | Consumer Durables & Apparel               | South Korea  | 7.00       | 
+| 2014 | Air Purifier                                                                                                                | Consumer Durables & Apparel               | South Korea  | 126.00     | 
+| 2015 | 4Gb LPDDR2 SDRAM                                                                                                            | Semiconductors & Semiconductors Equipment | South Korea  | 1.00       | 
+| 2015 | H000 (Set-top Box)                                                                                                          | Technology Hardware & Equipment           | South Korea  | 79.00      | 
+| 2016 | Lineal Alkyl Bencene (LAB)                                                                                                  | Energy                                    | Spain        | 3499.50    | 
 ### Insights
 
 - The products with the highest levels of carbon emissions are typically associated with heavy industry.
 - The following car models are leading in carbon emissions during production: Land Cruiser Prado, Mercedes-Benz GLA, Mercedes-Benz S-Class, and Mercedes-Benz SL
-- One of the leading industries (7th place) is "Pharmaceuticals, Biotechnology & Life Sciences".
+- Spain , Germany, Brazil, South Korea are  are dominant players in heavy industry so these countries contributed the most cacbon emission.
+- Germany reduce carbon emission in food insdustry but increase amount of carbon emission in heavy industry when they expanded supply chain and targeted to export globally 
+
 
