@@ -291,8 +291,35 @@ limit 15
 | Food & Beverage Processing                                             | 0.00          | 0.00          | 7.05          | 0.00          | 0.00          | 
 
 
-#### Countries contribute the most carbon emission each year
+#### Details of Top 10 Products contribute  the most carbon emission 
+```SQL
+select product_name, b.industry_group, country_name, company_name, round(avg(carbon_footprint_pcf), 2) as avg_CFP
+from product_emissions a
+Join industry_groups b
+on a.industry_group_id = b.ID
+Join companies c
+On a.company_id=c.id
+Join countries d
+On a.country_id= d.id
+Group by product_name
+order by avg(carbon_footprint_pcf) DESC
+Limit 10
 
+```
+
+Result
+| product_name                                                                                                                       | industry_group                     | country_name | company_name                            | avg_CFP    | 
+| ---------------------------------------------------------------------------------------------------------------------------------: | ---------------------------------: | -----------: | --------------------------------------: | ---------: | 
+| Wind Turbine G128 5 Megawats                                                                                                       | Electrical Equipment and Machinery | Spain        | "Gamesa Corporación Tecnológica, S.A."  | 3718044.00 | 
+| Wind Turbine G132 5 Megawats                                                                                                       | Electrical Equipment and Machinery | Spain        | "Gamesa Corporación Tecnológica, S.A."  | 3276187.00 | 
+| Wind Turbine G114 2 Megawats                                                                                                       | Electrical Equipment and Machinery | Spain        | "Gamesa Corporación Tecnológica, S.A."  | 1532608.00 | 
+| Wind Turbine G90 2 Megawats                                                                                                        | Electrical Equipment and Machinery | Spain        | "Gamesa Corporación Tecnológica, S.A."  | 1251625.00 | 
+| Land Cruiser Prado. FJ Cruiser. Dyna trucks. Toyoace.IMV def unit.                                                                 | Automobiles & Components           | Japan        | "Hino Motors, Ltd."                     | 191687.00  | 
+| Retaining wall structure with a main wall (sheet pile): 136 tonnes of steel sheet piles and 4 tonnes of tierods per 100 meter wall | Materials                          | Luxembourg   | Arcelor Mittal                          | 167000.00  | 
+| TCDE                                                                                                                               | Materials                          | Japan        | "Mitsubishi Gas Chemical Company, Inc." | 99075.00   | 
+| Mercedes-Benz GLE (GLE 500 4MATIC)                                                                                                 | Automobiles & Components           | Germany      | Daimler AG                              | 91000.00   | 
+| Mercedes-Benz S-Class (S 500)                                                                                                      | Automobiles & Components           | Germany      | Daimler AG                              | 85000.00   | 
+| Mercedes-Benz SL (SL 350)                                                                                                          | Automobiles & Components           | Germany      | Daimler AG                              | 72000.00   | 
 
 
 ### Insights
