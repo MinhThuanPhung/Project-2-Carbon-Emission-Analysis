@@ -365,6 +365,6 @@ Result
 - The products with the highest levels of carbon emissions are typically associated with heavy industry.
 - The following car models are leading in carbon emissions during production: Land Cruiser Prado, Mercedes-Benz GLA, Mercedes-Benz S-Class, and Mercedes-Benz SL
 - Spain , Germany, Brazil, South Korea are  are dominant players in heavy industry so these countries contributed the most cacbon emission.
-- Germany reduce carbon emission in food insdustry but increase amount of carbon emission in heavy industry when they expanded supply chain and targeted to export globally 
+- Germany reduced carbon emission in food insdustry but increase amount of carbon emission in heavy industry when they expanded supply chain and targeted to export globally 
 
 
