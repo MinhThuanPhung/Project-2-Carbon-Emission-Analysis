@@ -254,6 +254,29 @@ Result
 | 2016 | 6891.52  | 
 | 2017 | 4050.85  |  
 
+```SQL
+
+select product_name, company_name, industry_group, country_name, 
+round(sum(carbon_footprint_pcf),2) as sum_CFP
+from product_emissions as T1
+Join companies as T2 ON T1.company_id = T2.id
+Join countries as T3 ON T1.country_id = T3.id
+Join industry_groups as T4 ON T1.industry_group_id = T4.id
+Where year = 2015
+group by 1, 2, 3, 4
+Order by 5 desc
+Limit 15
+
+select product_name, company_name, industry_group, country_name, 
+round(sum(carbon_footprint_pcf),2) as sum_CFP
+from product_emissions as T1
+Join companies as T2 ON T1.company_id = T2.id
+Join countries as T3 ON T1.country_id = T3.id
+Join industry_groups as T4 ON T1.industry_group_id = T4.id
+Where year = 2015
+group by 1, 2, 3, 4
+Order by 5 desc
+
 From table above we see. 
 
 Carbon emission increased over the year from 2013 to 2017. It was dramatically  in 2015 which 18 times as much as carbon emission in 2013 then reduced sinificantly in 2016 then reduced gradually in 2017 at 4050. 
