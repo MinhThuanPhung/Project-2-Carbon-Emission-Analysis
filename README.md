@@ -287,7 +287,8 @@ Limit 15
 
 From table above we see. 
 
-Carbon emission increased over the year from 2013 to 2017. It was dramatically  in 2015 which 18 times as much as carbon emission in 2013 then reduced sinificantly in 2016 then reduced gradually in 2017 at 4050. 
+Carbon emission increased over the year from 2013 to 2017. It was dramatically  in 2015 which 18 times as much as carbon emission in 2013 then reduced sinificantly in 2016 then reduced gradually in 2017 at 4050.
+In 2015, the reason of sharp increase is the big investment in wind turbin in Spain.
 
 #### Industry groups has demonstrated the most notable decrease in carbon footprints (PCFs) over time?
 ```SQL
