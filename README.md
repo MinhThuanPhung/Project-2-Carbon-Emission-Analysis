@@ -1,6 +1,6 @@
 # Project-2-Carbon-Emission-Analysis
 This report aims to analyze carbon emissions to examine the carbon footprint across various industries. We aim to identify sectors with the highest levels of emissions by analyzing them across countries and years, as well as to uncover trends.
-
+![carbon-footprint-feature](https://github.com/user-attachments/assets/82dcf4b7-9e65-4aaa-89cd-e23290e17261)
 
 
 ## Data Source: Where Our Data Comes From
@@ -8,6 +8,7 @@ Our dataset is compiled from publicly available data from nature.com and encompa
 
 ## Data Structure
 The dataset consists of 4 tables containing information regarding carbon emissions generated during the production of goods.
+![Database diagram](https://github.com/user-attachments/assets/22430a68-dde2-4b1f-80e7-642e306beada)
 
 
 ### Table product_emissions
