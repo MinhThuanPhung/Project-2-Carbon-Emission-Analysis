@@ -267,15 +267,23 @@ group by 1, 2, 3, 4
 Order by 5 desc
 Limit 15
 
-select product_name, company_name, industry_group, country_name, 
-round(sum(carbon_footprint_pcf),2) as sum_CFP
-from product_emissions as T1
-Join companies as T2 ON T1.company_id = T2.id
-Join countries as T3 ON T1.country_id = T3.id
-Join industry_groups as T4 ON T1.industry_group_id = T4.id
-Where year = 2015
-group by 1, 2, 3, 4
-Order by 5 desc
+| product_name                                                                                     | company_name                           | industry_group                     | country_name | sum_CFP    | 
+| -----------------------------------------------------------------------------------------------: | -------------------------------------: | ---------------------------------: | -----------: | ---------: | 
+| Wind Turbine G128 5 Megawats                                                                     | "Gamesa Corporación Tecnológica, S.A." | Electrical Equipment and Machinery | Spain        | 3718044.00 | 
+| Wind Turbine G132 5 Megawats                                                                     | "Gamesa Corporación Tecnológica, S.A." | Electrical Equipment and Machinery | Spain        | 3276187.00 | 
+| Wind Turbine G114 2 Megawats                                                                     | "Gamesa Corporación Tecnológica, S.A." | Electrical Equipment and Machinery | Spain        | 1532608.00 | 
+| Wind Turbine G90 2 Megawats                                                                      | "Gamesa Corporación Tecnológica, S.A." | Electrical Equipment and Machinery | Spain        | 1251625.00 | 
+| Mercedes-Benz SL-Class                                                                           | Daimler AG                             | Automobiles & Components           | Germany      | 69000.00   | 
+| Mercedes-Benz CLS-Class                                                                          | Daimler AG                             | Automobiles & Components           | Germany      | 57100.00   | 
+| Mercedes-Benz S-Class                                                                            | Daimler AG                             | Automobiles & Components           | Germany      | 54000.00   | 
+| Mercedes-Benz C-Class                                                                            | Daimler AG                             | Automobiles & Components           | Germany      | 50500.00   | 
+| Mercedes-Benz GLK-Class                                                                          | Daimler AG                             | Automobiles & Components           | Germany      | 48800.00   | 
+| Mercedes-Benz E-Class Saloon                                                                     | Daimler AG                             | Automobiles & Components           | Germany      | 47200.00   | 
+| Mercedes-Benz M-Class - Passenger Car                                                            | Daimler AG                             | Automobiles & Components           | Germany      | 43600.00   | 
+| Mercedes-Benz E-Class BlueTEC Hybrid                                                             | Daimler AG                             | Automobiles & Components           | Germany      | 40600.00   | 
+| Average of all GM vehicles produced and used in the 10 year life-cycle.                          | General Motors Company                 | Automobiles & Components           | USA          | 39100.00   | 
+| Audi A6                                                                                          | Volkswagen AG                          | Automobiles & Components           | Germany      | 37094.00   | 
+| Mean value for a vehicle within the Volkswagen Group according to CDP Report 2014 (global scope) | Volkswagen AG                          | Automobiles & Components           | Germany      | 33683.00   | 
 
 From table above we see. 
 
