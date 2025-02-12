@@ -418,7 +418,7 @@ from product_emissions as t1
 	Join industry_groups as t2 on t2.id= t1.industry_group_id
 Group by industry_group
 order by 3 desc
-
+```
 Result
 
 | industry_group                                                         | total_cfp_2013 | total_cfp_2017 | difference | 
