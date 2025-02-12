@@ -65,7 +65,7 @@ Result
 
 ### Analysis
 
-#### Products contribute the most to carbon emissions
+#### 1. Products contribute the most to carbon emissions
 ```sql
 select product_name, round(avg(carbon_footprint_pcf), 2) as avg_CFP
 from product_emissions
@@ -94,7 +94,7 @@ Wind Turbine contributes the highest carbon emissions, followed by  Land Cruiser
 
 
 
-#### Industry groups of these products
+#### 2. Industry groups of these products
 
 ```sql
 select product_name, b.industry_group, round(avg(carbon_footprint_pcf), 2) as avg_CFP
@@ -144,7 +144,7 @@ From table above we see.
 
 Top 3 industries have products contribute the most carbon emission are Electrical Equipment and Machinery, Materials, Automobiles & Components. In thí top 3 induties, 80% carbon emission comes froms Electrical Equipment and Machinery. 
 
-#### The industries with the highest contribution to carbon emissions
+#### 3. The industries with the highest contribution to carbon emissions
 
 ```sql
 select  b.industry_group, round(avg(carbon_footprint_pcf), 2) as avg_CFP
@@ -174,7 +174,7 @@ From table above we see.
 
 Top 3 industries with the highest contribution to carbon emissions are  Electrical Equipment and Machinery, Automobiles & Components  and "Pharmaceuticals, Biotechnology & Life Sciences. Only Electrical Equipment and Machinery contributes 891050.73 Cacbon emission which are more than 90% in total carbon emssion contributed by Top 10 Indutries
 
-#### The companies with the highest contribution to carbon emissions
+#### 4. The companies with the highest contribution to carbon emissions
 
 ```sql
 select  c.company_name, round(avg(carbon_footprint_pcf),2) as avg_CFP
@@ -207,7 +207,7 @@ From table above we see.
 Top 10 companies with the highest contribution to carbon emissions include Gamesa Corporación Tecnológica S.A, Hino Motors Ltd, Arcelor Mittal, Arcelor Mittal,  Weg S/A, Daimler AG, General Motors Company, Volkswagen AG, Waters Corporation, Daikin Industries Ltd and CJ Cheiljedang. Gamesa Corporación Tecnológica, S.A contributes 2444616 carbon emission which is company with the highest contribution.
 
 
-#### The countries with the highest contribution to carbon emissions
+#### 5. The countries with the highest contribution to carbon emissions
 
 ```sql
 select  d.country_name, round(avg(carbon_footprint_pcf), 2) as avg_CFP 
@@ -237,7 +237,7 @@ From table above we see.
 
 Spain, Luxembourg and Germany are top 3 countries  with the highest contribution to carbon emissions. Spain contributed 699009.29 which is more than 80% compared with total contribution carbon emission of top 10 countries.
 
-#### The trend of carbon footprints (PCFs) over the years
+#### 6. The trend of carbon footprints (PCFs) over the years
 
 ```sql
 select Year, round(avg(carbon_footprint_pcf),2) as Avg_CFP
@@ -368,7 +368,7 @@ Result
 | Mercedes-Benz SL (SL 350)                                                                                                          | Automobiles & Components           | Germany      | Daimler AG                              | 72000.00   | 
 
 
-#### Contribution of each industries in Top 5 countries over the years
+#### 7.Contribution of each industries in Top 5 countries over the years
 
 
 ```SQL
@@ -406,6 +406,54 @@ Result
 | 2015 | 4Gb LPDDR2 SDRAM                                                                                                            | Semiconductors & Semiconductors Equipment | South Korea  | 1.00       | 
 | 2015 | H000 (Set-top Box)                                                                                                          | Technology Hardware & Equipment           | South Korea  | 79.00      | 
 | 2016 | Lineal Alkyl Bencene (LAB)                                                                                                  | Energy                                    | Spain        | 3499.50    | 
+
+```sql
+
+select 
+	t2.industry_group, 
+	sum(case when year= 2013 then carbon_footprint_pcf end) as total_cfp_2013 , 
+	sum(case when year= 2017 then carbon_footprint_pcf end) as total_cfp_2017,
+	sum(case when year= 2013 then carbon_footprint_pcf end) - sum(case when year= 2017 then carbon_footprint_pcf end) as difference
+from product_emissions as t1
+	Join industry_groups as t2 on t2.id= t1.industry_group_id
+Group by industry_group
+order by 3 desc
+
+Result
+
+| industry_group                                                         | total_cfp_2013 | total_cfp_2017 | difference | 
+| ---------------------------------------------------------------------: | -------------: | -------------: | ---------: | 
+| Materials                                                              | 200513         | 213137         | -12624     | 
+| Capital Goods                                                          | 60190          | 94949          | -34759     | 
+| Technology Hardware & Equipment                                        | 61100          | 27592          | 33508      | 
+| "Food, Beverage & Tobacco"                                             | 4995           | 3162           | 1833       | 
+| Commercial & Professional Services                                     | 1157           | 741            | 416        | 
+| Software & Services                                                    | 6              | 690            | -684       | 
+| Tires                                                                  | [NULL]         | [NULL]         | [NULL]     | 
+| Media                                                                  | 9645           | [NULL]         | [NULL]     | 
+| Electrical Equipment and Machinery                                     | [NULL]         | [NULL]         | [NULL]     | 
+| "Textiles, Apparel, Footwear and Luxury Goods"                         | [NULL]         | [NULL]         | [NULL]     | 
+| Gas Utilities                                                          | [NULL]         | [NULL]         | [NULL]     | 
+| "Forest and Paper Products - Forestry, Timber, Pulp and Paper, Rubber" | [NULL]         | [NULL]         | [NULL]     | 
+| Tobacco                                                                | [NULL]         | [NULL]         | [NULL]     | 
+| Retailing                                                              | [NULL]         | [NULL]         | [NULL]     | 
+| Energy                                                                 | 750            | [NULL]         | [NULL]     | 
+| Automobiles & Components                                               | 130189         | [NULL]         | [NULL]     | 
+| Household & Personal Products                                          | 0              | [NULL]         | [NULL]     | 
+| Consumer Durables & Apparel                                            | 2867           | [NULL]         | [NULL]     | 
+| "Mining - Iron, Aluminum, Other Metals"                                | [NULL]         | [NULL]         | [NULL]     | 
+| Trading Companies & Distributors and Commercial Services & Supplies    | [NULL]         | [NULL]         | [NULL]     | 
+| Semiconductors & Semiconductor Equipment                               | [NULL]         | [NULL]         | [NULL]     | 
+| Food & Beverage Processing                                             | [NULL]         | [NULL]         | [NULL]     | 
+| "Consumer Durables, Household and Personal Products"                   | [NULL]         | [NULL]         | [NULL]     | 
+| Telecommunication Services                                             | 52             | [NULL]         | [NULL]     | 
+| Containers & Packaging                                                 | [NULL]         | [NULL]         | [NULL]     | 
+| "Pharmaceuticals, Biotechnology & Life Sciences"                       | 32271          | [NULL]         | [NULL]     | 
+| Utilities                                                              | 122            | [NULL]         | [NULL]     | 
+| Semiconductors & Semiconductors Equipment                              | [NULL]         | [NULL]         | [NULL]     | 
+| Food & Staples Retailing                                               | [NULL]         | [NULL]         | [NULL]     | 
+| Chemicals                                                              | [NULL]         | [NULL]         | [NULL]     | 
+
 ### Insights
 
 - The products with the highest levels of carbon emissions are typically associated with heavy industry.
