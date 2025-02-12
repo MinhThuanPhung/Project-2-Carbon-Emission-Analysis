@@ -266,7 +266,7 @@ Where year = 2015
 group by 1, 2, 3, 4
 Order by 5 desc
 Limit 15
-
+```
 | product_name                                                                                     | company_name                           | industry_group                     | country_name | sum_CFP    | 
 | -----------------------------------------------------------------------------------------------: | -------------------------------------: | ---------------------------------: | -----------: | ---------: | 
 | Wind Turbine G128 5 Megawats                                                                     | "Gamesa Corporación Tecnológica, S.A." | Electrical Equipment and Machinery | Spain        | 3718044.00 | 
@@ -290,7 +290,7 @@ From table above we see.
 Carbon emission increased over the year from 2013 to 2017. It was dramatically  in 2015 which 18 times as much as carbon emission in 2013 then reduced sinificantly in 2016 then reduced gradually in 2017 at 4050.
 In 2015, the reason of sharp increase is the big investment in wind turbin in Spain.
 
-#### Industry groups has demonstrated the most notable decrease in carbon footprints (PCFs) over time?
+#### 7. Industry groups has demonstrated the most notable decrease in carbon footprints (PCFs) over time?
 ```SQL
 select Year, industry_group, round(avg(carbon_footprint_pcf),2) as Avg_CFP
 from product_emissions a
@@ -368,7 +368,7 @@ Result
 | Mercedes-Benz SL (SL 350)                                                                                                          | Automobiles & Components           | Germany      | Daimler AG                              | 72000.00   | 
 
 
-#### 7.Contribution of each industries in Top 5 countries over the years
+#### Contribution of each industries in Top 5 countries over the years
 
 
 ```SQL
