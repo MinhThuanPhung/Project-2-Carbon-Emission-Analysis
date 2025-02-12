@@ -413,7 +413,7 @@ select
 	t2.industry_group, 
 	sum(case when year= 2013 then carbon_footprint_pcf end) as total_cfp_2013 , 
 	sum(case when year= 2017 then carbon_footprint_pcf end) as total_cfp_2017,
-	sum(case when year= 2013 then carbon_footprint_pcf end) - sum(case when year= 2017 then carbon_footprint_pcf end) as difference
+	sum(case when year= 2017 then carbon_footprint_pcf end) - sum(case when year= 2013 then carbon_footprint_pcf end) as difference
 from product_emissions as t1
 	Join industry_groups as t2 on t2.id= t1.industry_group_id
 Group by industry_group
@@ -423,24 +423,12 @@ Result
 
 | industry_group                                                         | total_cfp_2013 | total_cfp_2017 | difference | 
 | ---------------------------------------------------------------------: | -------------: | -------------: | ---------: | 
-| Materials                                                              | 200513         | 213137         | -12624     | 
-| Capital Goods                                                          | 60190          | 94949          | -34759     | 
-| Technology Hardware & Equipment                                        | 61100          | 27592          | 33508      | 
-| "Food, Beverage & Tobacco"                                             | 4995           | 3162           | 1833       | 
-| Commercial & Professional Services                                     | 1157           | 741            | 416        | 
-| Software & Services                                                    | 6              | 690            | -684       | 
-| Tires                                                                  | [NULL]         | [NULL]         | [NULL]     | 
-| Media                                                                  | 9645           | [NULL]         | [NULL]     | 
-| Electrical Equipment and Machinery                                     | [NULL]         | [NULL]         | [NULL]     | 
-| "Textiles, Apparel, Footwear and Luxury Goods"                         | [NULL]         | [NULL]         | [NULL]     | 
-| Gas Utilities                                                          | [NULL]         | [NULL]         | [NULL]     | 
-| "Forest and Paper Products - Forestry, Timber, Pulp and Paper, Rubber" | [NULL]         | [NULL]         | [NULL]     | 
-| Tobacco                                                                | [NULL]         | [NULL]         | [NULL]     | 
-| Retailing                                                              | [NULL]         | [NULL]         | [NULL]     | 
-| Energy                                                                 | 750            | [NULL]         | [NULL]     | 
-| Automobiles & Components                                               | 130189         | [NULL]         | [NULL]     | 
-| Household & Personal Products                                          | 0              | [NULL]         | [NULL]     | 
-| Consumer Durables & Apparel                                            | 2867           | [NULL]         | [NULL]     | 
+| Materials                                                              | 200513         | 213137         | 12624      | 
+| Capital Goods                                                          | 60190          | 94949          | 34759      | 
+| Technology Hardware & Equipment                                        | 61100          | 27592          | -33508     | 
+| "Food, Beverage & Tobacco"                                             | 4995           | 3162           | -1833      | 
+| Commercial & Professional Services                                     | 1157           | 741            | -416       | 
+| Software & Services                                                    | 6              | 690            | 684        | 
 | "Mining - Iron, Aluminum, Other Metals"                                | [NULL]         | [NULL]         | [NULL]     | 
 | Trading Companies & Distributors and Commercial Services & Supplies    | [NULL]         | [NULL]         | [NULL]     | 
 | Semiconductors & Semiconductor Equipment                               | [NULL]         | [NULL]         | [NULL]     | 
@@ -453,12 +441,24 @@ Result
 | Semiconductors & Semiconductors Equipment                              | [NULL]         | [NULL]         | [NULL]     | 
 | Food & Staples Retailing                                               | [NULL]         | [NULL]         | [NULL]     | 
 | Chemicals                                                              | [NULL]         | [NULL]         | [NULL]     | 
-
+| Tires                                                                  | [NULL]         | [NULL]         | [NULL]     | 
+| Media                                                                  | 9645           | [NULL]         | [NULL]     | 
+| Electrical Equipment and Machinery                                     | [NULL]         | [NULL]         | [NULL]     | 
+| "Textiles, Apparel, Footwear and Luxury Goods"                         | [NULL]         | [NULL]         | [NULL]     | 
+| Gas Utilities                                                          | [NULL]         | [NULL]         | [NULL]     | 
+| "Forest and Paper Products - Forestry, Timber, Pulp and Paper, Rubber" | [NULL]         | [NULL]         | [NULL]     | 
+| Tobacco                                                                | [NULL]         | [NULL]         | [NULL]     | 
+| Retailing                                                              | [NULL]         | [NULL]         | [NULL]     | 
+| Energy                                                                 | 750            | [NULL]         | [NULL]     | 
+| Automobiles & Components                                               | 130189         | [NULL]         | [NULL]     | 
+| Household & Personal Products                                          | 0              | [NULL]         | [NULL]     | 
+| Consumer Durables & Apparel                                            | 2867           | [NULL]         | [NULL]     | 
 ### Insights
 
 - The products with the highest levels of carbon emissions are typically associated with heavy industry.
 - The following car models are leading in carbon emissions during production: Land Cruiser Prado, Mercedes-Benz GLA, Mercedes-Benz S-Class, and Mercedes-Benz SL
 - Spain , Germany, Brazil, South Korea are  are dominant players in heavy industry so these countries contributed the most cacbon emission.
-- Germany reduced carbon emission in food insdustry but increase amount of carbon emission in heavy industry when they expanded supply chain and targeted to export globally 
+- Germany reduced carbon emission in food insdustry but increase amount of carbon emission in heavy industry when they expanded supply chain and targeted to export globally
+- Capital good show the notable increase 
 
 
